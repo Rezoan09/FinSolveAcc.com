@@ -422,47 +422,20 @@ img{ max-width:100%; display:block; }
 }
 
 /* ================= LEDGRR ================= */
-.ledgrr{
-  display:grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap:22px;
-  align-items:center;
-}
 
-.ledgrr__bullets{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:14px 0 18px;
-}
-
-.mock{
-  border-radius: 28px;
+.shot{
+  border-radius: 24px;
+  overflow: hidden;
   border: 1px solid rgba(255,255,255,0.12);
-  background:
-    radial-gradient(800px 520px at 15% 25%, rgba(9,183,255,0.16), transparent 60%),
-    radial-gradient(700px 520px at 85% 10%, rgba(0,211,199,0.12), transparent 60%),
-    rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.04);
   box-shadow: var(--shadow);
-  overflow:hidden;
 }
 
-.mock__top{
-  height:44px;
-  background: rgba(0,0,0,0.25);
-  border-bottom:1px solid rgba(255,255,255,0.10);
+.shot img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
-
-.mock__body{
-  padding:18px;
-}
-.mock__line{
-  height:12px;
-  border-radius:999px;
-  background: rgba(255,255,255,0.14);
-  margin:12px 0;
-}
-.mock__line.short{ width:60%; }
 
 /* ================= CONTACT ================= */
 .contact-grid{
