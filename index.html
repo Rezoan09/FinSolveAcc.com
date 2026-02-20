@@ -1,620 +1,505 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FinSolve Accounting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="FinSolve_Accounting_Favicon.ico">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    html { scroll-behavior: smooth; }
-    body { line-height: 1.6; background: #ffffff; color: #1a1a1a; overflow-x: hidden; }
-    
-    header { 
-      background: linear-gradient(135deg, #0A2540 0%, #154360 50%, #1B4F72 100%); 
-      padding: 1.5rem 2rem; 
-      color: white; 
-      position: sticky; 
-      top: 0; 
-      z-index: 1000; 
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      backdrop-filter: blur(10px);
-    }
-    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-    nav a { 
-      color: white; 
-      margin-left: 2rem; 
-      text-decoration: none; 
-      font-weight: 600; 
-      transition: all 0.3s; 
-      position: relative;
-      padding: 0.5rem 0;
-    }
-    nav a:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #54E6FF;
-      transition: width 0.3s;
-    }
-    nav a:hover:after { width: 100%; }
-    nav a:hover { color: #54E6FF; }
-    
-    .hero { 
-      text-align: center; 
-      padding: 8rem 2rem 6rem; 
-      background: linear-gradient(135deg, #0A2540 0%, #154360 40%, #2E86DE 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(84, 230, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(46, 134, 222, 0.1) 0%, transparent 50%);
-      animation: pulse 8s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-    .hero h1 { 
-      font-size: 3.5rem; 
-      color: white; 
-      margin-bottom: 1.5rem; 
-      position: relative;
-      z-index: 1;
-      font-weight: 800;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      animation: fadeInUp 0.8s ease-out;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .hero p { 
-      font-size: 1.3rem; 
-      color: #e0f0ff; 
-      max-width: 700px; 
-      margin: 0 auto 2.5rem; 
-      position: relative;
-      z-index: 1;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
-    .hero button { 
-      background: linear-gradient(135deg, #54E6FF, #2E86DE);
-      color: white; 
-      border: none; 
-      padding: 1rem 3rem; 
-      font-size: 1.1rem; 
-      border-radius: 50px; 
-      cursor: pointer; 
-      transition: 0.3s ease; 
-      position: relative;
-      z-index: 1;
-      font-weight: 700;
-      box-shadow: 0 8px 25px rgba(46, 134, 222, 0.4);
-      animation: fadeInUp 0.8s ease-out 0.4s both;
-    }
-    .hero button:hover { 
-      transform: translateY(-3px); 
-      box-shadow: 0 12px 35px rgba(46, 134, 222, 0.5);
-    }
-    
-    section { padding: 5rem 2rem; max-width: 1200px; margin: auto; }
-    section h2 { 
-      font-size: 2.5rem; 
-      color: #0A2540; 
-      margin-bottom: 1.5rem; 
-      text-align: center;
-      font-weight: 800;
-      position: relative;
-      padding-bottom: 1rem;
-    }
-    section h2:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, #2E86DE, #54E6FF);
-      border-radius: 2px;
-    }
-    
-    .services, .pricing, .about, .team, .ledgrr, .contact { 
-      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-      border-radius: 20px; 
-      padding: 3rem; 
-      margin-bottom: 2rem;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-      border: 1px solid rgba(46, 134, 222, 0.1);
-    }
-    
-    .service-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .service-item { 
-      background: white; 
-      padding: 2rem; 
-      border-radius: 15px; 
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 2px solid transparent;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-item:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #2E86DE, #54E6FF);
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-    .service-item:hover:before {
-      transform: scaleX(1);
-    }
-    .service-item:hover { 
-      transform: translateY(-10px) scale(1.02); 
-      box-shadow: 0 15px 40px rgba(46, 134, 222, 0.2);
-      border-color: #2E86DE;
-    }
-    .service-item h3 { 
-      color: #2E86DE; 
-      margin-bottom: 1rem; 
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-    .service-item p { color: #555; font-size: 1rem; line-height: 1.7; }
-    
-    .pricing-table { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .pricing-card { 
-      border: 3px solid #e0e0e0; 
-      border-radius: 20px; 
-      padding: 2.5rem 2rem; 
-      background: white; 
-      text-align: center; 
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .pricing-card:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: linear-gradient(90deg, #2E86DE, #54E6FF);
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-    .pricing-card:hover:before {
-      transform: scaleX(1);
-    }
-    .pricing-card:hover { 
-      transform: translateY(-15px); 
-      box-shadow: 0 20px 50px rgba(46, 134, 222, 0.25);
-      border-color: #2E86DE;
-    }
-    .pricing-card h3 { 
-      color: #2E86DE; 
-      margin-bottom: 1rem; 
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
-    .pricing-card .price { 
-      font-size: 2.5rem; 
-      font-weight: 800; 
-      background: linear-gradient(135deg, #0A2540, #2E86DE);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 1.5rem 0; 
-    }
-    .pricing-card ul { list-style: none; text-align: left; margin: 1.5rem 0; }
-    .pricing-card ul li { 
-      padding: 0.75rem 0; 
-      color: #555; 
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 0.95rem;
-    }
-    .pricing-card ul li:before { content: "✓ "; color: #2E86DE; font-weight: bold; margin-right: 0.5rem; }
-    
-    .contact form { display: grid; gap: 1.2rem; margin-top: 2rem; max-width: 600px; }
-    .contact input, .contact textarea { 
-      padding: 1rem; 
-      border: 2px solid #e0e0e0; 
-      border-radius: 10px; 
-      font-size: 1rem; 
-      width: 100%;
-      transition: all 0.3s;
-      background: white;
-    }
-    .contact input:focus, .contact textarea:focus { 
-      outline: none; 
-      border-color: #2E86DE; 
-      box-shadow: 0 0 0 4px rgba(46, 134, 222, 0.1);
-      transform: translateY(-2px);
-    }
-    .contact button { 
-      background: linear-gradient(135deg, #2E86DE, #54E6FF);
-      color: white; 
-      padding: 1rem; 
-      border: none; 
-      border-radius: 10px; 
-      cursor: pointer; 
-      font-size: 1.1rem; 
-      transition: all 0.3s;
-      font-weight: 700;
-      box-shadow: 0 6px 20px rgba(46, 134, 222, 0.3);
-    }
-    .contact button:hover { 
-      transform: translateY(-3px); 
-      box-shadow: 0 10px 30px rgba(46, 134, 222, 0.4);
-    }
-    .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .contact-item { 
-      background: white; 
-      padding: 1.5rem; 
-      border-radius: 15px; 
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: all 0.3s;
-      border: 2px solid transparent;
-    }
-    .contact-item:hover {
-      transform: translateY(-5px);
-      border-color: #2E86DE;
-      box-shadow: 0 8px 25px rgba(46, 134, 222, 0.15);
-    }
-    .contact-item strong { 
-      color: #2E86DE; 
-      display: block; 
-      margin-bottom: 0.75rem;
-      font-size: 1.1rem;
-    }
-    
-    footer { 
-      text-align: center; 
-      padding: 3rem 2rem; 
-      font-size: 0.95rem; 
-      background: linear-gradient(135deg, #0A2540, #154360);
-      color: white; 
-    }
-    
-    .team-members { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-top: 2rem; }
-    .member { 
-      text-align: center; 
-      background: white; 
-      padding: 2rem; 
-      border-radius: 20px; 
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08); 
-      transition: all 0.4s;
-      border: 2px solid transparent;
-    }
-    .member:hover { 
-      transform: translateY(-10px) scale(1.03); 
-      box-shadow: 0 15px 45px rgba(46, 134, 222, 0.2);
-      border-color: #2E86DE;
-    }
-    .member-avatar {
-      width: 100px; 
-      height: 100px; 
-      background: linear-gradient(135deg, #2E86DE, #54E6FF);
-      border-radius: 50%; 
-      margin: 0 auto 1rem; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      color: white; 
-      font-size: 2.5rem; 
-      font-weight: bold;
-      box-shadow: 0 8px 25px rgba(46, 134, 222, 0.3);
-    }
-    .member h4 { margin-top: 0.5rem; color: #0A2540; font-size: 1.3rem; font-weight: 700; }
-    .member p { font-size: 0.95rem; color: #666; margin-top: 0.25rem; }
-    
-    .ledgrr-content { background: white; padding: 2.5rem; border-radius: 15px; margin-top: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-    .ledgrr-content h3 { color: #2E86DE; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; }
-    .ledgrr-content ul { margin-left: 1.5rem; margin-top: 1rem; }
-    .ledgrr-content ul li { margin-bottom: 0.75rem; color: #555; line-height: 1.6; }
-    .ledgrr-btn {
-      display: inline-block; 
-      background: linear-gradient(135deg, #2E86DE, #54E6FF);
-      color: white; 
-      padding: 1.2rem 3rem; 
-      border-radius: 50px; 
-      text-decoration: none; 
-      font-size: 1.2rem; 
-      font-weight: 700; 
-      transition: all 0.4s ease;
-      box-shadow: 0 8px 25px rgba(46, 134, 222, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .ledgrr-btn:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
-    }
-    .ledgrr-btn:hover:before {
-      width: 300px;
-      height: 300px;
-    }
-    .ledgrr-btn:hover { 
-      transform: translateY(-5px) scale(1.05); 
-      box-shadow: 0 15px 40px rgba(46, 134, 222, 0.5);
-    }
-    .ledgrr-btn span {
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero p { font-size: 1.1rem; }
-      section h2 { font-size: 2rem; }
-      nav a { margin-left: 1rem; font-size: 0.9rem; }
-    }
-  </style>
+  <title>FinSolve Accounting — Accounting, Tax & Bookkeeping for SMEs in Bangladesh</title>
+  <meta name="description" content="FinSolve Accounting provides bookkeeping, tax, VAT, payroll and business consulting—digitally streamlined for SMEs in Bangladesh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="FinSolve_Logo.png">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header>
-    <nav>
-      <div style="display: flex; align-items: center; gap: 0.75rem;">
-        <img src="FinSolve_Logo.png" alt="FinSolve Logo" style="height: 45px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-        <strong style="font-size: 1.3rem; font-weight: 800;">FinSolve</strong>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="dot"></span>
+        <span>Empowering SMEs in Bangladesh with professional accounting services</span>
       </div>
-      <div>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#team">Team</a>
-        <a href="#ledgrr">Ledgrr</a>
-        <a href="#contact">Contact</a>
+      <div class="topbar__right">
+        <a class="toplink" href="mailto:info@finsolveacc.com" aria-label="Email FinSolve">
+          <!-- mail icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+          info@finsolveacc.com
+        </a>
+        <a class="toplink" href="tel:+8801712778704" aria-label="Call FinSolve">
+          <!-- phone icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.7 15.7 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.56 3.6.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.1 21 3 13.9 3 5a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1.2.2 2.5.56 3.6a1 1 0 0 1-.24 1l-2.05 2.2Z"/></svg>
+          +880 1712-778704
+        </a>
       </div>
-    </nav>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="FinSolve Home">
+        <img src="FinSolve_Logo.png" alt="FinSolve Accounting logo" class="brand__logo" />
+        <span class="brand__text">
+          <span class="brand__name">FinSolve</span>
+          <span class="brand__sub">Accounting</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary Navigation">
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          <a href="#team">Team</a>
+          <a href="#ledgrr">Ledgrr</a>
+          <a href="#contact" class="btn btn--sm">Free Consultation</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Powering Small Business Growth</h1>
-    <p>Your trusted partner in accounting, tax, and bookkeeping — digitally streamlined for SMEs in Bangladesh.</p>
-    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started Today</button>
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="pill">
+          <span class="pill__badge">Digital-first</span>
+          Accounting • Tax • Bookkeeping
+        </p>
+
+        <h1>Powering Small Business Growth</h1>
+        <p class="lead">
+          Your trusted partner in accounting, tax, and bookkeeping — digitally streamlined for SMEs in Bangladesh.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn" href="#contact">Get Started Today</a>
+          <a class="btn btn--ghost" href="#services">View Services</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <div class="stat__num">Accurate</div>
+            <div class="stat__label">Books & reporting</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Compliant</div>
+            <div class="stat__label">Tax, VAT, payroll</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Fast</div>
+            <div class="stat__label">Digital workflows</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__card">
+        <div class="hero__cardTop">
+          <h3>Quick Quote</h3>
+          <p class="muted">Tell us your monthly volume — we’ll recommend a plan.</p>
+        </div>
+
+        <form class="miniForm" id="miniForm">
+          <label>
+            Monthly transactions
+            <select name="transactions" required>
+              <option value="" disabled selected>Select</option>
+              <option value="up_to_100">Up to 100</option>
+              <option value="up_to_500">Up to 500</option>
+              <option value="unlimited">Unlimited</option>
+            </select>
+          </label>
+
+          <label>
+            Business type
+            <input name="business" type="text" placeholder="e.g., E-commerce, Agency, Retail" required />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" placeholder="you@company.com" required />
+          </label>
+
+          <button class="btn btn--full" type="submit">Recommend a Plan</button>
+          <p class="tiny muted">No spam. We’ll email a simple recommendation.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="hero__bg" aria-hidden="true"></div>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-list">
-        <div class="service-item">
-          <h3>📊 Bookkeeping</h3>
-          <p>Accurate and timely recording of all your financial transactions to keep your books up-to-date and organized.</p>
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Our Services</h2>
+          <p class="muted">Reliable, compliant, and designed for busy founders.</p>
         </div>
-        <div class="service-item">
-          <h3>📈 Financial Reporting</h3>
-          <p>Comprehensive financial statements and reports to help you understand your business performance at a glance.</p>
-        </div>
-        <div class="service-item">
-          <h3>🧾 Tax Preparation</h3>
-          <p>Expert tax filing services ensuring compliance with Bangladesh tax regulations and maximizing deductions.</p>
-        </div>
-        <div class="service-item">
-          <h3>💼 Payroll Management</h3>
-          <p>Efficient payroll processing, ensuring timely and accurate salary payments with full compliance.</p>
-        </div>
-        <div class="service-item">
-          <h3>📋 VAT Services</h3>
-          <p>Complete VAT registration, filing, and compliance services tailored for your business needs.</p>
-        </div>
-        <div class="service-item">
-          <h3>💡 Business Consulting</h3>
-          <p>Strategic financial advice to help your business grow, optimize operations, and achieve goals.</p>
-        </div>
+        <a class="link" href="#contact">View all services →</a>
+      </div>
+
+      <div class="grid grid--3">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Zm2 6h6v2H9V9Zm0 4h6v2H9v-2Z"/></svg>
+          </div>
+          <h3>Bookkeeping</h3>
+          <p>Accurate and timely recording of financial transactions to keep your books up-to-date and organized.</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h12v2H6v14h14v2H6a2 2 0 0 1-2-2Zm6-2V9h2v8h-2Zm4 0V7h2v10h-2Zm4 0v-6h2v6h-2Z"/></svg>
+          </div>
+          <h3>Financial Reporting</h3>
+          <p>Clear financial statements and reports to help you understand business performance at a glance.</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 4 9.7 9 10 5-.3 9-5 9-10V6l-9-4Zm-1 6h2v6h-2V8Zm0 8h2v2h-2v-2Z"/></svg>
+          </div>
+          <h3>Tax Preparation</h3>
+          <p>Expert tax filing ensuring compliance with Bangladesh regulations while maximizing deductions.</p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11h10v2H7v-2Zm-2 7V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Zm2-12v12h10V6H7Z"/></svg>
+          </div>
+          <h3>Payroll Management</h3>
+          <p>Efficient payroll processing with timely payments and full compliance.</p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 3.9-3.1 7-7 7S5 12.9 5 9a7 7 0 0 1 7-7Zm0 16c4.4 0 8 1.8 8 4v0H4v0c0-2.2 3.6-4 8-4Zm1-11h-2v2H9v2h2v2h2v-2h2V9h-2V7Z"/></svg>
+          </div>
+          <h3>VAT Services</h3>
+          <p>VAT registration, filing, and compliance services tailored for your business needs.</p>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 5v6l4 2-.8 1.8L11 14V7h2Z"/></svg>
+          </div>
+          <h3>Business Consulting</h3>
+          <p>Strategic financial advice to optimize operations, improve cash flow, and achieve your goals.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="pricing">
-    <h2>Pricing Plans</h2>
-    <div class="pricing">
-      <div class="pricing-table">
-        <div class="pricing-card">
-          <h3>Starter</h3>
-          <div class="price">BDT 8,000<span style="font-size: 1rem; color: #666; font-weight: 400;">/month</span></div>
-          <ul>
+  <!-- CTA Banner -->
+  <section class="banner">
+    <div class="container banner__inner">
+      <div class="banner__copy">
+        <h2>Ready to streamline your accounting?</h2>
+        <p>Contact us today for a free consultation — we’ll map the fastest path to clean books and compliance.</p>
+      </div>
+      <div class="banner__actions">
+        <a class="btn btn--dark" href="tel:+8801712778704">Call Now</a>
+        <a class="btn btn--ghostLight" href="#contact">Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Pricing Plans</h2>
+          <p class="muted">Simple monthly packages designed for SME needs.</p>
+        </div>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="price">
+          <div class="price__head">
+            <h3>Starter</h3>
+            <p class="price__value"><span>BDT</span> 8,000 <small>/month</small></p>
+          </div>
+          <ul class="checklist">
             <li>Basic bookkeeping</li>
             <li>Monthly financial reports</li>
             <li>Email support</li>
             <li>Up to 100 transactions/month</li>
           </ul>
-        </div>
-        <div class="pricing-card">
-          <h3>Professional</h3>
-          <div class="price">BDT 15,000<span style="font-size: 1rem; color: #666; font-weight: 400;">/month</span></div>
-          <ul>
+          <a class="btn btn--full btn--ghost" href="#contact">Choose Starter</a>
+        </article>
+
+        <article class="price price--featured">
+          <div class="price__badge">Most Popular</div>
+          <div class="price__head">
+            <h3>Professional</h3>
+            <p class="price__value"><span>BDT</span> 15,000 <small>/month</small></p>
+          </div>
+          <ul class="checklist">
             <li>Full bookkeeping services</li>
             <li>Tax preparation & filing</li>
             <li>VAT compliance</li>
             <li>Priority support</li>
             <li>Up to 500 transactions/month</li>
           </ul>
-        </div>
-        <div class="pricing-card">
-          <h3>Enterprise</h3>
-          <div class="price">Get a Quote</div>
-          <ul>
+          <a class="btn btn--full" href="#contact">Choose Professional</a>
+        </article>
+
+        <article class="price">
+          <div class="price__head">
+            <h3>Enterprise</h3>
+            <p class="price__value">Get a Quote</p>
+          </div>
+          <ul class="checklist">
             <li>All Professional features</li>
             <li>Dedicated account manager</li>
             <li>Payroll management</li>
             <li>Business consulting</li>
             <li>Unlimited transactions</li>
           </ul>
-        </div>
+          <a class="btn btn--full btn--ghost" href="#contact">Request Quote</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About FinSolve</h2>
-    <div class="about">
-      <p style="font-size: 1.15rem; color: #333; line-height: 1.9;">
-        FinSolve Accounting is a leading digital accounting firm dedicated to empowering small and medium enterprises (SMEs) in Bangladesh. 
-        Founded with the vision of making professional accounting services accessible and affordable, we combine traditional accounting expertise 
-        with modern digital tools to deliver exceptional value to our clients.
-      </p>
-      <p style="font-size: 1.15rem; color: #333; line-height: 1.9; margin-top: 1.5rem;">
-        Our mission is to simplify financial management for businesses, allowing entrepreneurs to focus on what they do best while we handle 
-        their accounting, tax, and compliance needs. With years of experience and a commitment to accuracy and timeliness, FinSolve is your 
-        trusted partner in financial success.
-      </p>
-    </div>
-  </section>
-
-  <section id="team">
-    <h2>Our Team</h2>
-    <div class="team">
-      <div class="team-members">
-        <div class="member">
-          <div class="member-avatar">A</div>
-          <h4>Mahbub Alam</h4>
-          <p>CFO</p>
-          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #2E86DE; font-weight: 600;">CA, 15+ years experience</p>
-        </div>
-        <div class="member">
-          <div class="member-avatar">S</div>
-          <h4>MD. Billal Hossain</h4>
-          <p>Head of Tax Services</p>
-          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #2E86DE; font-weight: 600;">Tax specialist, 10+ years</p>
-        </div>
-        <div class="member">
-          <div class="member-avatar">R</div>
-          <h4>Rafiq Ahmed</h4>
-          <p>Senior Accountant</p>
-          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #2E86DE; font-weight: 600;">ACCA, 8+ years experience</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ledgrr">
-    <h2>Ledgrr - Our Digital Platform</h2>
-    <div class="ledgrr">
-      <div class="ledgrr-content">
-        <h3>Streamlined Accounting at Your Fingertips</h3>
-        <p style="color: #555; line-height: 1.8; margin-top: 1rem; font-size: 1.05rem;">
-          Ledgrr is our proprietary digital accounting platform designed specifically for SMEs in Bangladesh. 
-          It provides you with real-time access to your financial data, automated bookkeeping, and seamless 
-          collaboration with our accounting team.
+  <!-- About -->
+  <section class="section section--alt" id="about">
+    <div class="container split">
+      <div>
+        <h2>About FinSolve</h2>
+        <p>
+          FinSolve Accounting is a leading digital accounting firm dedicated to empowering small and medium enterprises (SMEs) in Bangladesh.
+          Founded with the vision of making professional accounting services accessible and affordable, we combine traditional accounting expertise
+          with modern digital tools to deliver exceptional value.
         </p>
-        <h3 style="margin-top: 2rem;">Key Features:</h3>
-        <ul>
-          <li>Real-time financial dashboard with key metrics</li>
+        <p>
+          Our mission is to simplify financial management for businesses, allowing entrepreneurs to focus on what they do best while we handle
+          accounting, tax, and compliance needs — with accuracy and timeliness.
+        </p>
+
+        <div class="badges">
+          <span class="badge">SME-friendly</span>
+          <span class="badge">Compliance-first</span>
+          <span class="badge">Digital workflows</span>
+        </div>
+      </div>
+
+      <div class="aboutCard">
+        <h3>What you get</h3>
+        <ul class="checklist">
+          <li>Monthly reporting & summaries</li>
+          <li>Organized records & documents</li>
+          <li>Tax + VAT compliance guidance</li>
+          <li>Clear next-steps and reminders</li>
+        </ul>
+
+        <div class="aboutCard__cta">
+          <a class="btn btn--full" href="#contact">Book a Free Consultation</a>
+          <p class="tiny muted">Email: info@finsolveacc.com • Dhaka, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Our Team</h2>
+          <p class="muted">Experienced professionals focused on accuracy and trust.</p>
+        </div>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="person">
+          <div class="avatar">A</div>
+          <h3>Mahbub Alam</h3>
+          <p class="role">CFO</p>
+          <p class="muted">CA, 15+ years experience</p>
+        </article>
+
+        <article class="person">
+          <div class="avatar">S</div>
+          <h3>MD. Billal Hossain</h3>
+          <p class="role">Head of Tax Services</p>
+          <p class="muted">Tax specialist, 10+ years</p>
+        </article>
+
+        <article class="person">
+          <div class="avatar">R</div>
+          <h3>Rafiq Ahmed</h3>
+          <p class="role">Senior Accountant</p>
+          <p class="muted">ACCA, 8+ years experience</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ledgrr -->
+  <section class="section section--alt" id="ledgrr">
+    <div class="container split">
+      <div>
+        <h2>Ledgrr — Our Digital Platform</h2>
+        <p class="lead2">Streamlined accounting at your fingertips.</p>
+        <p class="muted">
+          Ledgrr is our proprietary digital accounting platform designed for SMEs in Bangladesh.
+          It gives you real-time visibility into your finances, automated bookkeeping workflows,
+          and seamless collaboration with our accounting team.
+        </p>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="kpi__num">Real-time</div>
+            <div class="kpi__label">Financial dashboard</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num">Secure</div>
+            <div class="kpi__label">Cloud documents</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num">Simple</div>
+            <div class="kpi__label">Collaboration</div>
+          </div>
+        </div>
+
+        <div class="hero__cta">
+          <a class="btn" href="https://finsolveacc.com" target="_blank" rel="noreferrer">Launch Ledgrr App →</a>
+          <a class="btn btn--ghost" href="#pricing">See plans</a>
+        </div>
+        <p class="tiny muted">Ledgrr is included with all Professional & Enterprise plans.</p>
+      </div>
+
+      <div class="featureCard">
+        <h3>Key Features</h3>
+        <ul class="checklist">
+          <li>Real-time dashboard with key metrics</li>
           <li>Automated transaction categorization</li>
-          <li>Invoice generation and tracking</li>
-          <li>Expense management and receipt scanning</li>
+          <li>Invoice generation & tracking</li>
+          <li>Expense management & receipt scanning</li>
           <li>Direct communication with your accountant</li>
-          <li>Secure cloud-based storage of financial documents</li>
+          <li>Secure cloud storage for financial documents</li>
           <li>Mobile app for on-the-go access</li>
         </ul>
-        <p style="color: #555; line-height: 1.8; margin-top: 1.5rem; font-style: italic;">
-          Ledgrr is included with all our Professional and Enterprise plans, making it easier than ever to 
-          stay on top of your finances.
-        </p>
-        <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="https://ledgrr.online" target="_blank" class="ledgrr-btn">
-            <span>Launch Ledgrr App →</span>
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <div class="contact">
-      <p style="text-align: center; color: #555; margin-bottom: 1.5rem; font-size: 1.1rem;">
-        Ready to streamline your accounting? Contact us today for a free consultation.
-      </p>
-      
-      <div class="contact-info">
-        <div class="contact-item">
-          <strong>📧 Email</strong>
-          <a href="mailto:info@finsolveacc.com" style="color: #2E86DE; text-decoration: none;">info@finsolveacc.com</a>
-        </div>
-        <div class="contact-item">
-          <strong>📞 Phone</strong>
-          <a href="tel:+8801712778704" style="color: #2E86DE; text-decoration: none;">+880 1712778704</a>
-        </div>
-        <div class="contact-item">
-          <strong>📍 Address</strong>
-          <span>Dhaka, Bangladesh</span>
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Get In Touch</h2>
+          <p class="muted">Ready to streamline your accounting? Send a message — we’ll respond quickly.</p>
         </div>
       </div>
 
-      <form onsubmit="handleSubmit(event)">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        <textarea name="message" rows="5" placeholder="Tell us about your business and how we can help..." required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      <div class="contactGrid">
+        <div class="contactCard">
+          <h3>Contact</h3>
+          <div class="contactRow">
+            <span class="contactLabel">Email</span>
+            <a href="mailto:info@finsolveacc.com">info@finsolveacc.com</a>
+          </div>
+          <div class="contactRow">
+            <span class="contactLabel">Phone</span>
+            <a href="tel:+8801712778704">+880 1712-778704</a>
+          </div>
+          <div class="contactRow">
+            <span class="contactLabel">Address</span>
+            <span>Dhaka, Bangladesh</span>
+          </div>
+
+          <div class="contactNote">
+            <strong>Tip:</strong> If you want forms to email you instantly via Netlify, this page already supports it.
+          </div>
+        </div>
+
+        <!-- Netlify Form: works when deployed on Netlify -->
+        <form class="form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+
+          <label>
+            Name
+            <input name="name" type="text" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" placeholder="you@company.com" required />
+          </label>
+
+          <label>
+            Phone (optional)
+            <input name="phone" type="text" placeholder="+880..." />
+          </label>
+
+          <label>
+            What do you need help with?
+            <select name="need" required>
+              <option value="" disabled selected>Select</option>
+              <option>Bookkeeping</option>
+              <option>Tax preparation</option>
+              <option>VAT services</option>
+              <option>Payroll</option>
+              <option>Consulting</option>
+              <option>Not sure</option>
+            </select>
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="5" placeholder="Tell us about your business and what you need…" required></textarea>
+          </label>
+
+          <button class="btn btn--full" type="submit">Send Message</button>
+          <p class="tiny muted">By submitting, you agree we can contact you back. No spam.</p>
+        </form>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p style="font-size: 1rem; font-weight: 600;">&copy; 2025 FinSolve Accounting. All rights reserved.</p>
-    <p style="margin-top: 0.75rem; opacity: 0.9;">Empowering SMEs in Bangladesh with professional accounting services.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="FinSolve_Logo.png" alt="FinSolve Accounting" />
+        <div>
+          <strong>FinSolve Accounting</strong>
+          <p class="muted">Accounting • Tax • Bookkeeping • VAT • Payroll</p>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#ledgrr">Ledgrr</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> FinSolve Accounting. All rights reserved.</span>
+      <a class="toTop" href="#top" id="toTop" aria-label="Back to top">↑</a>
+    </div>
   </footer>
 
-  <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const phone = formData.get('phone');
-      const message = formData.get('message');
-      
-      const subject = encodeURIComponent('Contact Form Submission from ' + name);
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Phone: ' + phone + '\n\n' +
-        'Message:\n' + message
-      );
-      
-      window.location.href = 'mailto:info@finsolveacc.com?subject=' + subject + '&body=' + body;
-      
-      alert('Thank you for your message! Your email client will open to send the message.');
-      form.reset();
-    }
-
+  <script src="script.js"></script>
 </body>
 </html>
