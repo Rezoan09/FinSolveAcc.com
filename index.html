@@ -1,505 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FinSolve Accounting — Accounting, Tax & Bookkeeping for SMEs in Bangladesh</title>
-  <meta name="description" content="FinSolve Accounting provides bookkeeping, tax, VAT, payroll and business consulting—digitally streamlined for SMEs in Bangladesh." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="FinSolve_Logo.png">
-  <link rel="stylesheet" href="styles.css" />
+  <title>FinSolve Accounting</title>
+
+  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Top bar -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__left">
-        <span class="dot"></span>
-        <span>Empowering SMEs in Bangladesh with professional accounting services</span>
-      </div>
-      <div class="topbar__right">
-        <a class="toplink" href="mailto:info@finsolveacc.com" aria-label="Email FinSolve">
-          <!-- mail icon -->
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
-          info@finsolveacc.com
-        </a>
-        <a class="toplink" href="tel:+8801712778704" aria-label="Call FinSolve">
-          <!-- phone icon -->
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.7 15.7 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.56 3.6.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.1 21 3 13.9 3 5a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1.2.2 2.5.56 3.6a1 1 0 0 1-.24 1l-2.05 2.2Z"/></svg>
-          +880 1712-778704
-        </a>
-      </div>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+  <div class="container header__inner">
+    <div class="brand">
+      <img src="./FinSolve_Logo.png" class="brand__logo" alt="FinSolve Logo">
+      <span>FinSolve Accounting</span>
+    </div>
+
+    <nav class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#ledgrr">Ledgrr</a>
+      <a href="#contact" class="btn">Free Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <h1>Powering Small Business Growth</h1>
+      <p class="lead">
+        Your trusted partner in accounting, tax, and bookkeeping — digitally streamlined for SMEs in Bangladesh.
+      </p>
+
+      <a href="#services" class="btn">View Services</a>
+      <a href="#contact" class="btn btn--ghost">Get Started</a>
     </div>
   </div>
+</section>
 
-  <!-- Header -->
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="FinSolve Home">
-        <img src="FinSolve_Logo.png" alt="FinSolve Accounting logo" class="brand__logo" />
-        <span class="brand__text">
-          <span class="brand__name">FinSolve</span>
-          <span class="brand__sub">Accounting</span>
-        </span>
-      </a>
+<!-- ================= SERVICES ================= -->
 
-      <nav class="nav" aria-label="Primary Navigation">
-        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
 
-        <div class="nav__links" id="navLinks">
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#about">About</a>
-          <a href="#team">Team</a>
-          <a href="#ledgrr">Ledgrr</a>
-          <a href="#contact" class="btn btn--sm">Free Consultation</a>
-        </div>
-      </nav>
+    <div class="services-grid">
+
+      <div class="service-card service1">
+        <h3>Bookkeeping</h3>
+        <p>Accurate and timely recording of financial transactions to keep your books up-to-date and organized.</p>
+      </div>
+
+      <div class="service-card service2">
+        <h3>Financial Reporting</h3>
+        <p>Clear financial statements and reports to help you understand business performance at a glance.</p>
+      </div>
+
+      <div class="service-card service3">
+        <h3>Tax Preparation</h3>
+        <p>Expert tax filing ensuring compliance with Bangladesh regulations while maximizing deductions.</p>
+      </div>
+
+      <div class="service-card service4">
+        <h3>Payroll Management</h3>
+        <p>Efficient payroll processing with timely payments and full compliance.</p>
+      </div>
+
+      <div class="service-card service5">
+        <h3>VAT Services</h3>
+        <p>VAT registration, filing, and compliance services tailored for your business needs.</p>
+      </div>
+
+      <div class="service-card service6">
+        <h3>Business Consulting</h3>
+        <p>Strategic financial advice to optimize operations, improve cash flow, and achieve your goals.</p>
+      </div>
+
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div class="hero__copy">
-        <p class="pill">
-          <span class="pill__badge">Digital-first</span>
-          Accounting • Tax • Bookkeeping
-        </p>
+<!-- ================= FOOTER ================= -->
 
-        <h1>Powering Small Business Growth</h1>
-        <p class="lead">
-          Your trusted partner in accounting, tax, and bookkeeping — digitally streamlined for SMEs in Bangladesh.
-        </p>
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© 2026 FinSolve Accounting. All rights reserved.</p>
+  </div>
+</footer>
 
-        <div class="hero__cta">
-          <a class="btn" href="#contact">Get Started Today</a>
-          <a class="btn btn--ghost" href="#services">View Services</a>
-        </div>
-
-        <div class="hero__stats">
-          <div class="stat">
-            <div class="stat__num">Accurate</div>
-            <div class="stat__label">Books & reporting</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">Compliant</div>
-            <div class="stat__label">Tax, VAT, payroll</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">Fast</div>
-            <div class="stat__label">Digital workflows</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__card">
-        <div class="hero__cardTop">
-          <h3>Quick Quote</h3>
-          <p class="muted">Tell us your monthly volume — we’ll recommend a plan.</p>
-        </div>
-
-        <form class="miniForm" id="miniForm">
-          <label>
-            Monthly transactions
-            <select name="transactions" required>
-              <option value="" disabled selected>Select</option>
-              <option value="up_to_100">Up to 100</option>
-              <option value="up_to_500">Up to 500</option>
-              <option value="unlimited">Unlimited</option>
-            </select>
-          </label>
-
-          <label>
-            Business type
-            <input name="business" type="text" placeholder="e.g., E-commerce, Agency, Retail" required />
-          </label>
-
-          <label>
-            Email
-            <input name="email" type="email" placeholder="you@company.com" required />
-          </label>
-
-          <button class="btn btn--full" type="submit">Recommend a Plan</button>
-          <p class="tiny muted">No spam. We’ll email a simple recommendation.</p>
-        </form>
-      </div>
-    </div>
-
-    <div class="hero__bg" aria-hidden="true"></div>
-  </section>
-
-  <!-- Services -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2>Our Services</h2>
-          <p class="muted">Reliable, compliant, and designed for busy founders.</p>
-        </div>
-        <a class="link" href="#contact">View all services →</a>
-      </div>
-
-      <div class="grid grid--3">
-        <!-- Card 1 -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a2 2 0 0 1 2 2v16l-4-2-4 2-4-2-4 2V5a2 2 0 0 1 2-2Zm2 6h6v2H9V9Zm0 4h6v2H9v-2Z"/></svg>
-          </div>
-          <h3>Bookkeeping</h3>
-          <p>Accurate and timely recording of financial transactions to keep your books up-to-date and organized.</p>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h12v2H6v14h14v2H6a2 2 0 0 1-2-2Zm6-2V9h2v8h-2Zm4 0V7h2v10h-2Zm4 0v-6h2v6h-2Z"/></svg>
-          </div>
-          <h3>Financial Reporting</h3>
-          <p>Clear financial statements and reports to help you understand business performance at a glance.</p>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 4 9.7 9 10 5-.3 9-5 9-10V6l-9-4Zm-1 6h2v6h-2V8Zm0 8h2v2h-2v-2Z"/></svg>
-          </div>
-          <h3>Tax Preparation</h3>
-          <p>Expert tax filing ensuring compliance with Bangladesh regulations while maximizing deductions.</p>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11h10v2H7v-2Zm-2 7V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Zm2-12v12h10V6H7Z"/></svg>
-          </div>
-          <h3>Payroll Management</h3>
-          <p>Efficient payroll processing with timely payments and full compliance.</p>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 3.9-3.1 7-7 7S5 12.9 5 9a7 7 0 0 1 7-7Zm0 16c4.4 0 8 1.8 8 4v0H4v0c0-2.2 3.6-4 8-4Zm1-11h-2v2H9v2h2v2h2v-2h2V9h-2V7Z"/></svg>
-          </div>
-          <h3>VAT Services</h3>
-          <p>VAT registration, filing, and compliance services tailored for your business needs.</p>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 5v6l4 2-.8 1.8L11 14V7h2Z"/></svg>
-          </div>
-          <h3>Business Consulting</h3>
-          <p>Strategic financial advice to optimize operations, improve cash flow, and achieve your goals.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Banner -->
-  <section class="banner">
-    <div class="container banner__inner">
-      <div class="banner__copy">
-        <h2>Ready to streamline your accounting?</h2>
-        <p>Contact us today for a free consultation — we’ll map the fastest path to clean books and compliance.</p>
-      </div>
-      <div class="banner__actions">
-        <a class="btn btn--dark" href="tel:+8801712778704">Call Now</a>
-        <a class="btn btn--ghostLight" href="#contact">Send a Message</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="section" id="pricing">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2>Pricing Plans</h2>
-          <p class="muted">Simple monthly packages designed for SME needs.</p>
-        </div>
-      </div>
-
-      <div class="grid grid--3">
-        <article class="price">
-          <div class="price__head">
-            <h3>Starter</h3>
-            <p class="price__value"><span>BDT</span> 8,000 <small>/month</small></p>
-          </div>
-          <ul class="checklist">
-            <li>Basic bookkeeping</li>
-            <li>Monthly financial reports</li>
-            <li>Email support</li>
-            <li>Up to 100 transactions/month</li>
-          </ul>
-          <a class="btn btn--full btn--ghost" href="#contact">Choose Starter</a>
-        </article>
-
-        <article class="price price--featured">
-          <div class="price__badge">Most Popular</div>
-          <div class="price__head">
-            <h3>Professional</h3>
-            <p class="price__value"><span>BDT</span> 15,000 <small>/month</small></p>
-          </div>
-          <ul class="checklist">
-            <li>Full bookkeeping services</li>
-            <li>Tax preparation & filing</li>
-            <li>VAT compliance</li>
-            <li>Priority support</li>
-            <li>Up to 500 transactions/month</li>
-          </ul>
-          <a class="btn btn--full" href="#contact">Choose Professional</a>
-        </article>
-
-        <article class="price">
-          <div class="price__head">
-            <h3>Enterprise</h3>
-            <p class="price__value">Get a Quote</p>
-          </div>
-          <ul class="checklist">
-            <li>All Professional features</li>
-            <li>Dedicated account manager</li>
-            <li>Payroll management</li>
-            <li>Business consulting</li>
-            <li>Unlimited transactions</li>
-          </ul>
-          <a class="btn btn--full btn--ghost" href="#contact">Request Quote</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section section--alt" id="about">
-    <div class="container split">
-      <div>
-        <h2>About FinSolve</h2>
-        <p>
-          FinSolve Accounting is a leading digital accounting firm dedicated to empowering small and medium enterprises (SMEs) in Bangladesh.
-          Founded with the vision of making professional accounting services accessible and affordable, we combine traditional accounting expertise
-          with modern digital tools to deliver exceptional value.
-        </p>
-        <p>
-          Our mission is to simplify financial management for businesses, allowing entrepreneurs to focus on what they do best while we handle
-          accounting, tax, and compliance needs — with accuracy and timeliness.
-        </p>
-
-        <div class="badges">
-          <span class="badge">SME-friendly</span>
-          <span class="badge">Compliance-first</span>
-          <span class="badge">Digital workflows</span>
-        </div>
-      </div>
-
-      <div class="aboutCard">
-        <h3>What you get</h3>
-        <ul class="checklist">
-          <li>Monthly reporting & summaries</li>
-          <li>Organized records & documents</li>
-          <li>Tax + VAT compliance guidance</li>
-          <li>Clear next-steps and reminders</li>
-        </ul>
-
-        <div class="aboutCard__cta">
-          <a class="btn btn--full" href="#contact">Book a Free Consultation</a>
-          <p class="tiny muted">Email: info@finsolveacc.com • Dhaka, Bangladesh</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section class="section" id="team">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2>Our Team</h2>
-          <p class="muted">Experienced professionals focused on accuracy and trust.</p>
-        </div>
-      </div>
-
-      <div class="grid grid--3">
-        <article class="person">
-          <div class="avatar">A</div>
-          <h3>Rezoan Sultan</h3>
-          <p class="role">Founder</p>
-          <p class="muted">MS, IT</p>
-        </article>
-
-        <article class="person">
-          <div class="avatar">S</div>
-          <h3>Mahbub Alam</h3>
-          <p class="role">CFO</p>
-          <p class="muted">CA, 15+ years experience</p>
-        </article>
-
-        <article class="person">
-          <div class="avatar">R</div>
-          <h3>MD Billal Hossain</h3>
-          <p class="role">Head of Tax Services</p>
-          <p class="muted">Tax Specialist, 10+ Years</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ledgrr -->
-  <section class="section section--alt" id="ledgrr">
-    <div class="container split">
-      <div>
-        <h2>Ledgrr — Our Digital Platform</h2>
-        <p class="lead2">Streamlined accounting at your fingertips.</p>
-        <p class="muted">
-          Ledgrr is our proprietary digital accounting platform designed for SMEs in Bangladesh.
-          It gives you real-time visibility into your finances, automated bookkeeping workflows,
-          and seamless collaboration with our accounting team.
-        </p>
-
-        <div class="kpis">
-          <div class="kpi">
-            <div class="kpi__num">Real-time</div>
-            <div class="kpi__label">Financial dashboard</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi__num">Secure</div>
-            <div class="kpi__label">Cloud documents</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi__num">Simple</div>
-            <div class="kpi__label">Collaboration</div>
-          </div>
-        </div>
-
-        <div class="hero__cta">
-          <a class="btn" href="https://ledgrr.online" target="_blank" rel="noopener noreferrer">Launch Ledgrr App →</a>
-          <a class="btn btn--ghost" href="#pricing">See plans</a>
-        </div>
-        <p class="tiny muted">Ledgrr is included with all Professional & Enterprise plans.</p>
-      </div>
-
-      <div class="featureCard">
-        <h3>Key Features</h3>
-        <ul class="checklist">
-          <li>Real-time dashboard with key metrics</li>
-          <li>Automated transaction categorization</li>
-          <li>Invoice generation & tracking</li>
-          <li>Expense management & receipt scanning</li>
-          <li>Direct communication with your accountant</li>
-          <li>Secure cloud storage for financial documents</li>
-          <li>Web app for on-the-go access</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2>Get In Touch</h2>
-          <p class="muted">Ready to streamline your accounting? Send a message — we’ll respond quickly.</p>
-        </div>
-      </div>
-
-      <div class="contactGrid">
-        <div class="contactCard">
-          <h3>Contact</h3>
-          <div class="contactRow">
-            <span class="contactLabel">Email</span>
-            <a href="mailto:info@finsolveacc.com">info@finsolveacc.com</a>
-          </div>
-          <div class="contactRow">
-            <span class="contactLabel">Phone</span>
-            <a href="tel:+8801712778704">+880 1712-778704</a>
-          </div>
-          <div class="contactRow">
-            <span class="contactLabel">Address</span>
-            <span>Dhaka, Bangladesh</span>
-          </div>
-
-          <div class="contactNote">
-            <strong>Tip:</strong> If you want forms to email you instantly via Netlify, this page already supports it.
-          </div>
-        </div>
-
-        <!-- Netlify Form: works when deployed on Netlify -->
-        <form class="form" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-
-          <label>
-            Name
-            <input name="name" type="text" placeholder="Your name" required />
-          </label>
-
-          <label>
-            Email
-            <input name="email" type="email" placeholder="you@company.com" required />
-          </label>
-
-          <label>
-            Phone (optional)
-            <input name="phone" type="text" placeholder="+880..." />
-          </label>
-
-          <label>
-            What do you need help with?
-            <select name="need" required>
-              <option value="" disabled selected>Select</option>
-              <option>Bookkeeping</option>
-              <option>Tax preparation</option>
-              <option>VAT services</option>
-              <option>Payroll</option>
-              <option>Consulting</option>
-              <option>Not sure</option>
-            </select>
-          </label>
-
-          <label>
-            Message
-            <textarea name="message" rows="5" placeholder="Tell us about your business and what you need…" required></textarea>
-          </label>
-
-          <button class="btn btn--full" type="submit">Send Message</button>
-          <p class="tiny muted">By submitting, you agree we can contact you back. No spam.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="FinSolve_Logo.png" alt="FinSolve Accounting" />
-        <div>
-          <strong>FinSolve Accounting</strong>
-          <p class="muted">Accounting • Tax • Bookkeeping • VAT • Payroll</p>
-        </div>
-      </div>
-
-      <div class="footer__links">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#ledgrr">Ledgrr</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-
-    <div class="container footer__bottom">
-      <span>© <span id="year"></span> FinSolve Accounting. All rights reserved.</span>
-      <a class="toTop" href="#top" id="toTop" aria-label="Back to top">↑</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
