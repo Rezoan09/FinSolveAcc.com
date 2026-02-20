@@ -7,95 +7,333 @@
 
   <link rel="stylesheet" href="./styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Basic SEO -->
+  <meta name="description" content="FinSolve Accounting helps SMEs in Bangladesh with digital-first accounting, tax and bookkeeping services.">
 </head>
 
 <body>
 
 <!-- ================= HEADER ================= -->
-
 <header class="header">
   <div class="container header__inner">
-    <div class="brand">
+    <a class="brand" href="#top">
       <img src="./FinSolve_Logo.png" class="brand__logo" alt="FinSolve Logo">
-      <span>FinSolve Accounting</span>
-    </div>
+      <span class="brand__name">FinSolve Accounting</span>
+    </a>
 
     <nav class="nav__links">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
-      <a href="#team">Team</a>
       <a href="#ledgrr">Ledgrr</a>
-      <a href="#contact" class="btn">Free Consultation</a>
+      <a href="#contact" class="btn btn--small">Free Consultation</a>
     </nav>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
+<main id="top">
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow">Accounting • Tax • Bookkeeping for SMEs in Bangladesh</p>
 
-<section class="hero">
-  <div class="container hero__grid">
-    <div>
-      <h1>Powering Small Business Growth</h1>
-      <p class="lead">
-        Your trusted partner in accounting, tax, and bookkeeping — digitally streamlined for SMEs in Bangladesh.
-      </p>
+        <h1>Powering Small Business Growth</h1>
 
-      <a href="#services" class="btn">View Services</a>
-      <a href="#contact" class="btn btn--ghost">Get Started</a>
+        <p class="lead">
+          Your trusted partner in accounting, tax, and bookkeeping — digitally streamlined to keep your business compliant,
+          organized, and ready to scale.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#services" class="btn">View Services</a>
+          <a href="#contact" class="btn btn--ghost">Get Started</a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="pill">Fast onboarding</div>
+          <div class="pill">Monthly reporting</div>
+          <div class="pill">Compliance-ready</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= SERVICES ================= -->
-
-<section class="section" id="services">
-  <div class="container">
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="services-grid">
-
-      <div class="service-card service1">
-        <h3>Bookkeeping</h3>
-        <p>Accurate and timely recording of financial transactions to keep your books up-to-date and organized.</p>
+  <!-- ================= SERVICES ================= -->
+  <section class="section section--soft" id="services">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">Reliable, compliant, and designed for busy founders.</p>
+        </div>
+        <a class="link" href="#contact">View all services →</a>
       </div>
 
-      <div class="service-card service2">
-        <h3>Financial Reporting</h3>
-        <p>Clear financial statements and reports to help you understand business performance at a glance.</p>
-      </div>
+      <div class="services-grid">
+        <article class="service-card service1">
+          <h3>Bookkeeping</h3>
+          <p>Accurate and timely recording of financial transactions to keep your books up-to-date and organized.</p>
+        </article>
 
-      <div class="service-card service3">
-        <h3>Tax Preparation</h3>
-        <p>Expert tax filing ensuring compliance with Bangladesh regulations while maximizing deductions.</p>
-      </div>
+        <article class="service-card service2">
+          <h3>Financial Reporting</h3>
+          <p>Clear financial statements and monthly insights to understand performance at a glance.</p>
+        </article>
 
-      <div class="service-card service4">
-        <h3>Payroll Management</h3>
-        <p>Efficient payroll processing with timely payments and full compliance.</p>
-      </div>
+        <article class="service-card service3">
+          <h3>Tax Preparation</h3>
+          <p>Expert tax filing to ensure compliance with Bangladesh regulations while maximizing deductions.</p>
+        </article>
 
-      <div class="service-card service5">
-        <h3>VAT Services</h3>
-        <p>VAT registration, filing, and compliance services tailored for your business needs.</p>
-      </div>
+        <article class="service-card service4">
+          <h3>Payroll Management</h3>
+          <p>Efficient payroll processing with timely payments and compliance-ready documentation.</p>
+        </article>
 
-      <div class="service-card service6">
-        <h3>Business Consulting</h3>
-        <p>Strategic financial advice to optimize operations, improve cash flow, and achieve your goals.</p>
-      </div>
+        <article class="service-card service5">
+          <h3>VAT Services</h3>
+          <p>VAT registration, filing, and compliance services tailored for your business needs.</p>
+        </article>
 
+        <article class="service-card service6">
+          <h3>Business Consulting</h3>
+          <p>Strategic financial guidance to optimize operations, improve cash flow, and plan growth.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section-title">Pricing</h2>
+          <p class="section-subtitle">Simple plans. Upgrade anytime as your business grows.</p>
+        </div>
+        <span class="badge">Best value: Growth</span>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <h3>Starter</h3>
+          <p class="muted">For early-stage SMEs</p>
+          <div class="price"><span class="price__currency">৳</span>4,999<span class="price__per">/mo</span></div>
+          <ul class="list">
+            <li>Monthly bookkeeping</li>
+            <li>Basic reporting</li>
+            <li>Email support</li>
+          </ul>
+          <a class="btn btn--block btn--ghost" href="#contact">Get Starter</a>
+        </article>
+
+        <article class="price-card price-card--featured">
+          <div class="ribbon">Recommended</div>
+          <h3>Growth</h3>
+          <p class="muted">For scaling teams</p>
+          <div class="price"><span class="price__currency">৳</span>9,999<span class="price__per">/mo</span></div>
+          <ul class="list">
+            <li>Bookkeeping + monthly reports</li>
+            <li>VAT support & compliance</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn--block" href="#contact">Get Growth</a>
+        </article>
+
+        <article class="price-card">
+          <h3>Pro</h3>
+          <p class="muted">For high-volume operations</p>
+          <div class="price"><span class="price__currency">৳</span>19,999<span class="price__per">/mo</span></div>
+          <ul class="list">
+            <li>Everything in Growth</li>
+            <li>Payroll management</li>
+            <li>Dedicated advisor</li>
+          </ul>
+          <a class="btn btn--block btn--ghost" href="#contact">Talk to Us</a>
+        </article>
+      </div>
+
+      <p class="tiny muted note">* Pricing shown as example packages. We customize based on volume and complexity.</p>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section section--soft" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-card">
+          <h2 class="section-title">About FinSolve</h2>
+          <p class="section-subtitle">
+            FinSolve Accounting provides professional accounting services built for modern SMEs in Bangladesh.
+            We focus on compliance, clarity, and speed — so founders can spend less time on paperwork and more time on growth.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num">24–48h</div>
+              <div class="stat__label">Onboarding</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">Monthly</div>
+              <div class="stat__label">Reporting</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">SME</div>
+              <div class="stat__label">Focused</div>
+            </div>
+          </div>
+
+          <a class="btn btn--ghost" href="#contact">Book a free consultation</a>
+        </div>
+
+        <div class="feature-card">
+          <h3>What you get</h3>
+          <ul class="list list--check">
+            <li>Accurate records and clean books</li>
+            <li>Compliance-ready tax and VAT support</li>
+            <li>Clear reporting for better decisions</li>
+            <li>Digital-first workflow (fast + organized)</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Need a ledger system too?</strong>
+            <p class="muted">Use our partner product Ledgrr to track transactions and simplify reporting.</p>
+            <a class="link" href="#ledgrr">See Ledgrr →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEDGRR ================= -->
+  <section class="section" id="ledgrr">
+    <div class="container">
+      <div class="ledgrr">
+        <div class="ledgrr__left">
+          <h2 class="section-title">Ledgrr</h2>
+          <p class="section-subtitle">
+            A simple ledger app to track income & expenses, keep records organized, and make reporting easier.
+          </p>
+
+          <div class="ledgrr__bullets">
+            <div class="pill">Track transactions</div>
+            <div class="pill">Simple categories</div>
+            <div class="pill">Export-ready</div>
+          </div>
+
+          <div class="hero__actions">
+            <a class="btn" href="https://ledgrr.online" target="_blank" rel="noopener noreferrer">Launch Ledgrr App →</a>
+            <a class="btn btn--ghost" href="#contact">Integrate with FinSolve</a>
+          </div>
+        </div>
+
+        <div class="ledgrr__right">
+          <div class="mock">
+            <div class="mock__top"></div>
+            <div class="mock__body">
+              <div class="mock__line"></div>
+              <div class="mock__line"></div>
+              <div class="mock__line short"></div>
+            </div>
+          </div>
+          <p class="tiny muted">Tip: Later we can add a real screenshot of Ledgrr here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section section--soft" id="contact">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Tell us what you need — we’ll respond within 24 hours.</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Get in touch</h3>
+          <p class="muted">Email</p>
+          <p><a class="link" href="mailto:info@finsolveacc.com">info@finsolveacc.com</a></p>
+
+          <p class="muted" style="margin-top:18px;">Phone</p>
+          <p><a class="link" href="tel:+8801712778704">+880 1712-778704</a></p>
+
+          <p class="muted" style="margin-top:18px;">Service area</p>
+          <p>Bangladesh • Remote support available</p>
+
+          <div class="callout" style="margin-top:18px;">
+            <strong>Prefer WhatsApp?</strong>
+            <p class="muted">We can add a WhatsApp button next.</p>
+          </div>
+        </div>
+
+        <!-- Netlify Forms (no backend needed) -->
+        <form class="form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+
+          <div class="form__row">
+            <label>Your name</label>
+            <input required name="name" type="text" placeholder="Your full name" />
+          </div>
+
+          <div class="form__row">
+            <label>Email</label>
+            <input required name="email" type="email" placeholder="you@email.com" />
+          </div>
+
+          <div class="form__row">
+            <label>Business type</label>
+            <input name="business" type="text" placeholder="E-commerce, Agency, Retail..." />
+          </div>
+
+          <div class="form__row">
+            <label>Message</label>
+            <textarea required name="message" rows="5" placeholder="Tell us what you need help with..."></textarea>
+          </div>
+
+          <button class="btn btn--block" type="submit">Send Message</button>
+          <p class="tiny muted" style="margin-top:10px;">No spam. We’ll reply with a simple next step.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <!-- ================= FOOTER ================= -->
-
 <footer class="footer">
-  <div class="container footer-inner">
-    <p>© 2026 FinSolve Accounting. All rights reserved.</p>
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="./FinSolve_Logo.png" alt="FinSolve" class="footer__logo">
+      <div>
+        <div class="footer__name">FinSolve Accounting</div>
+        <div class="tiny muted">Digital-first accounting for SMEs in Bangladesh.</div>
+      </div>
+    </div>
+
+    <div class="footer__links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#ledgrr">Ledgrr</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© <span id="year"></span> FinSolve Accounting. All rights reserved.</span>
+    <span class="tiny muted">Developed by Rezoan Sultan</span>
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
