@@ -544,3 +544,21 @@ input:focus, textarea:focus{
   .container{ width: calc(100% - 28px); }
   .hero{ padding: 110px 0 96px; }
 }
+
+/* ===== WhatsApp Button ===== */
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #25D366;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
