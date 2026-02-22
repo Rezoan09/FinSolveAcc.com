@@ -280,6 +280,7 @@ img{ max-width:100%; display:block; }
   margin:0;
   color: rgba(242,246,255,0.80);
   line-height:1.45;
+  font-size: 13px;
 }
 
 .service-card:hover{
