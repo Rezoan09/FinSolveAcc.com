@@ -337,5 +337,56 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
+<!-- Event Chatbot Floating Button -->
+<div id="event-chatbot-P9BIFrjEVzDYo1sRRKTH"></div>
+<script>
+  (function() {
+    var button = document.createElement('button');
+    var logoUrl = 'https://storage.googleapis.com/eventplusplan.firebasestorage.app/logos/xb1JI0xCMzRtV5vGogtXKEpRMw23/NxuL5rl7hj33Zu1-Thinklytics AI Logo.png';
+    var brandColor = '#113978';
+
+    function showChatIcon() {
+      button.innerHTML = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><circle cx="9" cy="10" r="0.5" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10" r="0.5" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10" r="0.5" fill="currentColor" stroke="none"></circle></svg>';
+      button.style.cssText = 'position: fixed; bottom: 20px; right: 20px; width: 64px; height: 64px; border-radius: 50%; background: ' + brandColor + '; color: white; border: 3px solid white; cursor: pointer; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); z-index: 9999; transition: transform 0.2s; display: flex; align-items: center; justify-content: center;';
+    }
+
+    if (logoUrl) {
+      // Try to use logo
+      var img = document.createElement('img');
+      img.src = logoUrl;
+      img.style.cssText = 'width: 100%; height: 100%; object-fit: cover;';
+      img.alt = 'Thinklytics AI Chat';
+      img.onerror = function() {
+        console.warn('Logo failed to load, using fallback icon');
+        showChatIcon();
+      };
+      button.appendChild(img);
+      button.style.cssText = 'position: fixed; bottom: 20px; right: 20px; width: 64px; height: 64px; border-radius: 50%; background: ' + brandColor + '; border: 3px solid white; padding: 0; cursor: pointer; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); z-index: 9999; transition: transform 0.2s; overflow: hidden;';
+    } else {
+      // No logo, use chat icon
+      showChatIcon();
+    }
+
+    // Add online indicator dot
+    var onlineDot = document.createElement('div');
+    onlineDot.style.cssText = 'position: fixed; bottom: 69px; right: 25px; width: 14px; height: 14px; background: #22c55e; border: 2px solid white; border-radius: 50%; z-index: 10000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);';
+
+    button.onmouseover = function() { this.style.transform = 'scale(1.1)'; };
+    button.onmouseout = function() { this.style.transform = 'scale(1)'; };
+
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.eventplusplan.com/embed/XYHcIRZT0e';
+    iframe.style.cssText = 'position: fixed; bottom: 95px; right: 20px; width: 400px; height: 600px; border: none; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); z-index: 9999; display: none;';
+
+    button.onclick = function() {
+      iframe.style.display = iframe.style.display === 'none' ? 'block' : 'none';
+    };
+
+    document.body.appendChild(button);
+    document.body.appendChild(onlineDot);
+    document.body.appendChild(iframe);
+  })();
+</script>
+  
 </body>
 </html>
